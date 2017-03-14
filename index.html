@@ -1,4 +1,4 @@
-<!-- //##Main heading
+//##Main heading
 
 //#Sub heading
 
@@ -17,25 +17,43 @@
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+<svg width="500" height="500">
+
 <!-- //# SVG Rectangle -->
-	<!-- <svg width="500" height="500"> -->
-	  <!-- <rect width="250" height="250"></rect> -->
+		<rect width="250" height="250"></rect>
 
 
-	<!--   
-	  <rect x='0' y='0' width='100' height='100' fill='blue'></rect>
-	  <rect x='120' y='0' width='100' height='100' fill='red'></rect>
-	  <rect x='0' y='120' width='100' height='100' fill='green'></rect> -->
+		<rect x='0' y='0' width='100' height='100' fill='blue'></rect>
+		<rect x='120' y='0' width='100' height='100' fill='red'></rect>
+		<rect x='0' y='120' width='100' height='100' fill='green'></rect>
 
 
-	<!--<rect x='0' y='0' width='200' height='200' fill='rgb(255,0,0)'></rect>
-	  <rect x='50' y='50' width='200' height='200' fill='rgba(0,255,0,0.5)'></rect> //0.5 for filling opacity in color-->
+		<rect x='0' y='0' width='200' height='200' fill='rgb(255,0,0)'></rect>
+		<rect x='50' y='50' width='200' height='200' fill='rgba(0,255,0,0.5)'></rect> <!-- //0.5 for filling opacity in color -->
 
 
-  	<!-- <rect x='50' y='50' width='100' height='100' fill='none' stroke='blue' stroke-width='10'></rect>
-  	<rect x='100' y='80' width='100' height='100' fill='none' stroke='red' stroke-width='10'></rect> -->
+	  	<rect x='50' y='50' width='100' height='100' fill='none' stroke='blue' stroke-width='10'></rect>
+	  	<rect x='100' y='80' width='100' height='100' fill='none' stroke='red' stroke-width='10'></rect>
 <!-- //# SVG Rectangle END-->
+
+
+<!-- //# SVG Circle -->
+		<circle cx='100' cy='100' r='50' stroke='black' fill='red' stroke-width='10'></circle>
+<!-- //# SVG Circle END-->
+
+
+<!-- //# SVG Line -->
+		<line x1='50' y1='50' x2='200' y2='200' stroke='black' stroke-width='10'></line>
+
+	 	<!-- //Collection of lines joining each other at end points -->
+		<line x1='50' y1='50' x2='100' y2='100' stroke='black' stroke-width='10'></line>
+	  	<line x1='100' y1='100' x2='150' y2='130' stroke='black' stroke-width='10'></line>
+	  	<line x1='150' y1='130' x2='250' y2='290' stroke='black' stroke-width='10'></line>
+<!-- //# SVG Line END -->
+
+</svg>
 </body>
 </html>
 
-<!-- //##D3js examples END -->
+<!-- //##D3js examples END
