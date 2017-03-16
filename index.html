@@ -153,6 +153,19 @@
 		  	return d;
 		}
 //#Loading csv files with D3(manipulating data before passing) END-->
+
+
+//# D3 Linear Scale
+		var scale = d3.scaleLinear()//creating instance of linear scale and then adding properties to it
+		.domain([0,1]) //Data space
+		.range([0,100]);//Pixel space
+
+		console.log(scale(0));//scale take values in data space and returns in pixel space
+		console.log(scale(0.6));//returns 60
+		console.log(scale(1));//returns 100
+		console.log(scale.domain());//getter functions 
+		console.log(scale.range());
+//# D3 Linear Scale END -->
 </script>
 </svg>
 </body>
