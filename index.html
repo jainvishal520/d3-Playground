@@ -126,6 +126,17 @@
 		  <path d='M0 150 L50 100 L100 130 L 130 60' stroke='black' stroke-width='10' fill='none'></path>
 		</g>
 <!-- //#Pseudo Line Chart END -->
+
+
+<script>
+// //#Loading csv files with D3 -->
+		d3.csv('data.csv',function(myArrayOfObjects){
+			myArrayOfObjects.forEach(function(d){
+			console.log(d.x+d.y);//d3 reads all values as strings!!
+			});
+		});
+// //#Loading csv files with D3 END-->
+</script>
 </svg>
 </body>
 </html>
