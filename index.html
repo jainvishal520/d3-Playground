@@ -214,6 +214,45 @@
 		  .attr('width',20)
 		  .attr('height',20);
 //# Complete D3 pipeline -->
+
+
+
+//# Complete D3 pipeline(splitting data binding)
+
+		var data = [1,2,3,4,5];
+
+		var scale = d3.scaleLinear()
+		  .domain([1,5])
+		  .range([0,200]);
+
+		var svg = d3.select('body').append('svg')
+		  .attr('width',250)
+		  .attr('height',250);
+
+		function render(data,color){
+
+		//Bind data
+		var rects = svg.selectAll('rect').data(data);
+
+		//Enter phase(Enter deals with only new data)
+		rects.enter().append('rect')
+		   	.attr('y',50)
+		  	.attr('width',20)
+		  	.attr('height',20)
+		  
+		//Update phase(Update deals with all the data present so it will manipulate each and every data present)
+		.merge(rects)
+		  .attr('x',scale)
+		  .attr('fill',color);
+		  
+		//Exit phase(triggers when there are less data elements than the DOM elements present ans removes previous entries)
+		rects.exit().remove();
+		}
+
+		render([1,2,2.5],'red');
+		render([1,2,3,4,5],'blue');
+		render([1,2,3],'green');
+//# Complete D3 pipeline(splitting data binding) END -->
 </script>
 </svg>
 </body>
