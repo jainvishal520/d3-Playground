@@ -308,6 +308,41 @@
 		  render([1,2],'magenta');
 		},5000);
 //# D3 basic snippet to follow with dynamic data END -->
+
+
+
+// #Rendering a csv
+		var svg = d3.select('body').append('svg')
+		  .attr('width',250)
+		  .attr('height',250);
+
+		function type(d){
+		  d.x = +d.x;
+		  d.y = +d.y;
+		  return d;
+		}
+
+		function render(d){
+		  //bind
+		  var circles = svg.selectAll('circle').data(d);
+		  console.log(d.x);
+		  //enter 
+		  circles.enter().append('circle')
+		    .attr('r',10)
+
+		  //update
+		    .merge(circles)
+		      .attr("cx", function (d){ return d.x; })
+		      .attr("cy", function (d){ return d.y; });
+
+		  //exit
+
+		  circles.exit().remove();
+
+		}
+
+		d3.csv('data.csv',type,render);
+// #Rendering a csv END -->
 </script>
 </svg>
 </body>
