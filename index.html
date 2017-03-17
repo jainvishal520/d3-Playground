@@ -178,6 +178,22 @@
 		console.log(scale('C'));
 //# D3 Ordinal Scale END -->
 
+
+
+//# DOM in D3
+// creating a svg rectangle using javascript which is equivalent to below code in html
+// <svg width="250" height="250"><rect x="50" y="50" width="20" height="20"></rect></svg>
+var svg = d3.select('body').append('svg')
+  .attr('width',250)
+  .attr('height',250);
+
+var rect = d3.select('svg').append('rect')
+  .attr('x',50)
+  .attr('y',50)
+  .attr('width',20);
+//   .attr('height',20);
+//# DOM in D3 END -->
+
 </script>
 </svg>
 </body>
