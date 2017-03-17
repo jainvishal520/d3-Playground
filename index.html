@@ -183,17 +183,37 @@
 //# DOM in D3
 // creating a svg rectangle using javascript which is equivalent to below code in html
 // <svg width="250" height="250"><rect x="50" y="50" width="20" height="20"></rect></svg>
-var svg = d3.select('body').append('svg')
-  .attr('width',250)
-  .attr('height',250);
+		var svg = d3.select('body').append('svg')
+		  .attr('width',250)
+		  .attr('height',250);
 
-var rect = d3.select('svg').append('rect')
-  .attr('x',50)
-  .attr('y',50)
-  .attr('width',20);
+		var rect = d3.select('svg').append('rect')
+		  .attr('x',50)
+		  .attr('y',50)
+		  .attr('width',20);
 //   .attr('height',20);
 //# DOM in D3 END -->
 
+
+
+//# Complete D3 pipeline
+		var data = [1,2,3,4,5];
+		var scale = d3.scaleLinear()
+		  .domain([1,5])
+		  .range([0,200]);
+		var svg = d3.select('body').append('svg')
+		  .attr('width',250)
+		  .attr('height',250);
+
+		svg.selectAll('rect')
+		  .data(data)
+		  .enter().append('rect')
+		  // .attr('x',function(d){return scale(d);})
+		  .attr('x',scale)
+		  .attr('y',50)
+		  .attr('width',20)
+		  .attr('height',20);
+//# Complete D3 pipeline -->
 </script>
 </svg>
 </body>
