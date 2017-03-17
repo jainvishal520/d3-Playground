@@ -253,6 +253,61 @@
 		render([1,2,3,4,5],'blue');
 		render([1,2,3],'green');
 //# Complete D3 pipeline(splitting data binding) END -->
+
+
+
+//# D3 basic snippet to follow with dynamic data
+
+		var data = [1,2,3,4,5];
+
+		var svg = d3.select('body').append('svg')
+		  .attr('width',250)
+		  .attr('height',250);
+
+		var scale = d3.scaleLinear()
+		  .domain([1,5])
+		  .range([0,200]);
+
+		function render(data,color){
+		  //bind
+		  var rects = svg.selectAll('rect').data(data);
+
+		  rects.enter()
+		    .append('rect')
+		    .attr('y',50)
+		    .attr('width',20)
+		    .attr('height',20)
+
+		  //update
+		    .merge(rects)
+		      .attr('x',scale)
+		      .attr('fill',color);
+
+		  //exit
+
+		    rects.exit().remove();
+		}
+
+		setTimeout(function(){
+		  render([1,2,2.5],'red');
+		},1000);
+
+		setTimeout(function(){
+		  render([1,2,3,4,5],'blue');
+		},2000);
+
+		setTimeout(function(){
+		  render([1,2],'green');
+		},3000);
+
+		setTimeout(function(){
+		  render([3,4,5],'pink');
+		},4000);
+
+		setTimeout(function(){
+		  render([1,2],'magenta');
+		},5000);
+//# D3 basic snippet to follow with dynamic data END -->
 </script>
 </svg>
 </body>
